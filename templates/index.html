@@ -1,0 +1,27 @@
+<!DOCTTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>RNA Inventory</title>
+        <link rel="stylesheet" tyep="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Registory</h1>
+        <h2>New</h2>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Sequence</th>
+                    <th>Note</th>
+                </tr>
+                {% for seq in seqs %} 
+                    <tr>
+                        <td>{{seq.name }}</td>
+                        <td>{{ seq.sequence }}</td>
+                        <td>{{ seq.note }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        <a href="{{ url_for('form') }}">Edit</a>
+    </body>
+</html>

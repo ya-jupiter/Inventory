@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>RNA Inventory</title>
+        <link rel="stylesheet" tyep="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Registration New RNA</h1>
+        <form method="post" action="{{ url_for('register') }}">
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Sequence</th>
+                    <th>Note</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name"></td>
+                    <td><input type="text" name="sequence"></td>
+                    <td><input type="text" name="note"></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Register!">
+        </form>
+    </body>
+</html>
