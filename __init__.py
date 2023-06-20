@@ -12,5 +12,5 @@ db.create_RNA_table()
 # terminalからflask directoryが置いてある階層まで移動
 # $ cd work/
 # $ export FLASK_APP=RNAinventory
-# $ export FALSK_ENV=develoment
+# $ export FALSK_ENV=develoment # debuk mode
 # $ flask run

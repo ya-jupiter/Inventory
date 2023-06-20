@@ -6,22 +6,32 @@
         <link rel="stylesheet" tyep="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <h1>Registory</h1>
-        <h2>New</h2>
+        <h1>RNA Inventory</h1>
+        <h2>Menu</h2>
+            <a href="{{ url_for('form') }}">Single input</a>
+            <a href="{{ url_for('form') }}">Batch input</a>
+            <a href="{{ url_for('form') }}">Search</a>
+            <a href="{{ url_for('form') }}">Edit</a>
+        <h2>Inventory</h2>
+
             <table border="1">
                 <tr>
                     <th>Name</th>
                     <th>Sequence</th>
                     <th>Note</th>
+                    <th>Length</th>
+                    <th>Extinction coefficiency</th>
                 </tr>
                 {% for seq in seqs %} 
                     <tr>
-                        <td>{{seq.name }}</td>
+                        <td>{{ seq.name }}</td>
                         <td>{{ seq.sequence }}</td>
                         <td>{{ seq.note }}</td>
+                        <td>{{ seq.length }}</td>
+                        <td>{{ seq.excoef }}</td>
                     </tr>
                 {% endfor %}
             </table>
-        <a href="{{ url_for('form') }}">Edit</a>
+        
     </body>
 </html>
