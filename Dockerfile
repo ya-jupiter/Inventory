@@ -9,7 +9,7 @@ RUN apt-get update --allow-releaseinfo-change && \
     libgsl-dev \
     vim \
     wget    
-ENV HTTP_PROXY=http://10.243.1.2:8080 HTTPS_PROXY=http://10.243.1.2:8080
+# ENV HTTP_PROXY=http://10.243.1.2:8080 HTTPS_PROXY=http://10.243.1.2:8080
 RUN pip3 install \
     biopython \
     flask \
