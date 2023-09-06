@@ -1,0 +1,13 @@
+https://flask.palletsprojects.com/en/2.3.x/
+
+# build docker image
+docker build . 
+
+# build docker container
+docker run -it --network=host -v /host/folder:/wrok image
+
+# run flask app
+cd /work
+flask --app RNAinventory run --debug
+or
+flask --app RNAinventory run --host=0.0.0.0 # for other users

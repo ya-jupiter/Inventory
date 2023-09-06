@@ -9,26 +9,35 @@
         <h1>RNA Inventory</h1>
         <h2>Menu</h2>
             <a href="{{ url_for('form') }}">Single input</a>
-            <a href="{{ url_for('form') }}">Batch input</a>
+            <a href="{{ url_for('batch') }}">Batch input</a>
             <a href="{{ url_for('form') }}">Search</a>
             <a href="{{ url_for('form') }}">Edit</a>
         <h2>Inventory</h2>
 
             <table border="1">
                 <tr>
-                    <th>Name</th>
-                    <th>Sequence</th>
-                    <th>Note</th>
-                    <th>Length</th>
-                    <th>Extinction coefficiency</th>
+                    <th align="left">Name</th>
+                    <th align="left">Note</th>
+                    <th align="left">Length</th>
+                    <th align="left">&epsilon; [x10<sup>-3</sup>]</th>
+                    <th align="left">A260</th>
+                    <th align="left">Conc<br>[&mu;M]</th>
+                    <th align="left">volume<br>[&mu;L]</th>
+                    <th align="left">Mol<br>[nmol]</th>
+                    <th align="left">Sequence</th>
+
                 </tr>
                 {% for seq in seqs %} 
                     <tr>
                         <td>{{ seq.name }}</td>
-                        <td>{{ seq.sequence }}</td>
                         <td>{{ seq.note }}</td>
                         <td>{{ seq.length }}</td>
                         <td>{{ seq.excoef }}</td>
+                        <td>{{ seq.a260 }}</td>
+                        <td>{{ seq.conc }}</td>
+                        <td>{{ seq.volume }}</td>
+                        <td>{{ seq.mol }}</td>
+                        <td>{{ seq.sequence }}</td>
                     </tr>
                 {% endfor %}
             </table>

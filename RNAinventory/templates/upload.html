@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmation of uploaded file</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirm uploaded</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Note</th>
+                <th>A260</th>
+                <th>volume [&mu;L]</th>
+                <th>Sequence</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <form method="post" action="{{ url_for('batch_register') }}">
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
